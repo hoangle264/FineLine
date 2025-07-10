@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Demo_VisionMaster.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Test" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tesst123</Value>
+    </Setting>
+    <Setting Name="FolderPathConfig" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FilePathEnhancement" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Dell\Desktop\VisionParket\VisionParket\Image\EnhancementConfig.xml</Value>
+    </Setting>
+    <Setting Name="FilePathSurface" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Dell\Desktop\VisionParket\VisionParket\Image\SurfaceConfig.xml</Value>
+    </Setting>
+    <Setting Name="FilePathBoldAnalys" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Dell\Desktop\VisionParket\VisionParket\Image\BlodConfig.xml</Value>
+    </Setting>
+    <Setting Name="FileCofigRoiRectang" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Dell\Desktop\VisionParket\VisionParket\Image\\roi_info.json</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
