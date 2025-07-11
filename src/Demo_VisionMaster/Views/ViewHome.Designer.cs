@@ -31,7 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewHome));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnRefest = new System.Windows.Forms.Button();
             this.btnTrigger = new System.Windows.Forms.Button();
             this.btnStopApp = new System.Windows.Forms.Button();
             this.btnInitApp = new System.Windows.Forms.Button();
@@ -39,12 +42,10 @@
             this.CameraDisplay2 = new Demo_VisionMaster.UserControls.CameraDisplayControl();
             this.CameraDisplay3 = new Demo_VisionMaster.UserControls.CameraDisplayControl();
             this.CameraDisplay4 = new Demo_VisionMaster.UserControls.CameraDisplayControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -84,8 +85,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1654, 63);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(830, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(821, 57);
+            this.panel2.TabIndex = 1;
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnRefest);
             this.panel1.Controls.Add(this.btnTrigger);
             this.panel1.Controls.Add(this.btnStopApp);
             this.panel1.Controls.Add(this.btnInitApp);
@@ -95,11 +106,44 @@
             this.panel1.Size = new System.Drawing.Size(821, 57);
             this.panel1.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CadetBlue;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(746, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 57);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnRefest
+            // 
+            this.btnRefest.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefest.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefest.FlatAppearance.BorderSize = 0;
+            this.btnRefest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(170)))), ((int)(((byte)(254)))));
+            this.btnRefest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
+            this.btnRefest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefest.Image = global::Demo_VisionMaster.Properties.Resources.repeat;
+            this.btnRefest.Location = new System.Drawing.Point(225, 0);
+            this.btnRefest.Name = "btnRefest";
+            this.btnRefest.Size = new System.Drawing.Size(75, 57);
+            this.btnRefest.TabIndex = 5;
+            this.btnRefest.UseVisualStyleBackColor = false;
+            this.btnRefest.Click += new System.EventHandler(this.btnRefest_Click);
+            // 
             // btnTrigger
             // 
             this.btnTrigger.BackColor = System.Drawing.Color.Transparent;
             this.btnTrigger.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnTrigger.FlatAppearance.BorderSize = 0;
+            this.btnTrigger.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(170)))), ((int)(((byte)(254)))));
+            this.btnTrigger.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
             this.btnTrigger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTrigger.Image = global::Demo_VisionMaster.Properties.Resources.camera__1_;
             this.btnTrigger.Location = new System.Drawing.Point(150, 0);
@@ -114,6 +158,8 @@
             this.btnStopApp.BackColor = System.Drawing.Color.Transparent;
             this.btnStopApp.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnStopApp.FlatAppearance.BorderSize = 0;
+            this.btnStopApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(170)))), ((int)(((byte)(254)))));
+            this.btnStopApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
             this.btnStopApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStopApp.Image = global::Demo_VisionMaster.Properties.Resources.stop;
             this.btnStopApp.Location = new System.Drawing.Point(75, 0);
@@ -128,6 +174,8 @@
             this.btnInitApp.BackColor = System.Drawing.Color.Transparent;
             this.btnInitApp.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnInitApp.FlatAppearance.BorderSize = 0;
+            this.btnInitApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(170)))), ((int)(((byte)(254)))));
+            this.btnInitApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
             this.btnInitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInitApp.Image = global::Demo_VisionMaster.Properties.Resources.play;
             this.btnInitApp.Location = new System.Drawing.Point(0, 0);
@@ -193,30 +241,6 @@
             this.CameraDisplay4.Size = new System.Drawing.Size(826, 460);
             this.CameraDisplay4.TabIndex = 8;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(830, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(821, 57);
-            this.panel2.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.CadetBlue;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(746, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 57);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // ViewHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,8 +254,8 @@
             this.Load += new System.EventHandler(this.ViewHome_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -250,5 +274,6 @@
         private UserControls.CameraDisplayControl CameraDisplay4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRefest;
     }
 }

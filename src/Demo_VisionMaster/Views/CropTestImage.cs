@@ -40,7 +40,6 @@ namespace Demo_VisionMaster.Views
         public CropTestImage()
         {
             InitializeComponent();
-
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -169,8 +168,6 @@ namespace Demo_VisionMaster.Views
             e.Graphics.DrawLine(Pens.Gray, center, rotatePoint);
         }
 
-        
-
         private void btnLoadImage_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -209,16 +206,6 @@ namespace Demo_VisionMaster.Views
                 Mat cropped = new Mat(src, roi);
 
                 pictureBox2.Image = cropped.ToBitmap();
-                //using (SaveFileDialog sfd = new SaveFileDialog())
-                //{
-                //    sfd.Filter = "Bitmap Image|*.bmp";
-                //    if (sfd.ShowDialog() == DialogResult.OK)
-                //    {
-                //        Cv2.ImWrite(sfd.FileName, cropped);
-                      
-                //        MessageBox.Show("Đã crop và lưu ảnh.");
-                //    }
-                //}
             }
         }
 

@@ -27,7 +27,8 @@ namespace Demo_VisionMaster.Services
         System.Timers.Timer _timerMainCircle = new System.Timers.Timer();
         System.Timers.Timer _timerCheckConnect = new System.Timers.Timer();
         public event TriggerEvent _handleTriggerEvent;
-        CameraService cameraService = new CameraService();
+
+        #region Sample code
         //public void sample() 
         //{
         //    byte stationNumber = 1;
@@ -112,6 +113,8 @@ namespace Demo_VisionMaster.Services
         //    //ModbusTcpClient client1 = new ModbusTcpClient("127.0.0.1", 502, 1500, EndianFormat.ABCD);
 
         //}
+        #endregion
+        List<ModbusInput> inputs = new List<ModbusInput>();
         public bool Connect(string IP, int PORT) 
         {
             this._client = new ModbusTcpClient(IP, PORT);
@@ -122,24 +125,43 @@ namespace Demo_VisionMaster.Services
         {
             string IPAddress = System.Environment.GetEnvironmentVariable("PLC_IP");
             int Port = int.Parse(System.Environment.GetEnvironmentVariable("PLC_PORT"));
+            inputs.Add(new ModbusInput()
+            {
+                Address = "0",
+                DataType = DataTypeEnum.Bool,
+                FunctionCode = 1,
+                StationNumber = 1
+            });
+            inputs.Add(new ModbusInput()
+            {
+                Address = "1",
+                DataType = DataTypeEnum.Bool,
+                FunctionCode = 1,
+                StationNumber = 1
+            });
+            inputs.Add(new ModbusInput()
+            {
+                Address = "2",
+                DataType = DataTypeEnum.Bool,
+                FunctionCode = 1,
+                StationNumber = 1
+            });
+            inputs.Add(new ModbusInput()
+            {
+                Address = "3",
+                DataType = DataTypeEnum.Bool,
+                FunctionCode = 1,
+                StationNumber = 1
+            });
             if (Connect(IPAddress, Port) == true) 
             {
-                //ViewHome.Instance.UpdatePlcStatus(true);
-                //_timerMainCircle.Interval = 100;
-                //_timerMainCircle.Elapsed += _timerMainCircle_Elapsed; ;
-                //_timerMainCircle.Start();
-                //_timerCheckConnect.Interval = 1000;
-                //_timerCheckConnect.Elapsed += _timerCheckConnect_Elapsed;
-                //_timerCheckConnect.Start();
-                //_handleTriggerEvent += PlcService__handleTriggerEvent;
-                //ViewHome.Instance.UpdateAppStatus($"Connect With PLC Success: {DateTime.Now}");
+                ViewHome.Instance.UpdateAppStatus($"Connect With PLC Success: {DateTime.Now}");
             }
         }
         public void RunProcess()
         {
             if (_client.Connected)
             {
-                ViewHome.Instance.UpdatePlcStatus(true);
                 _timerMainCircle.Interval = 100;
                 _timerMainCircle.Elapsed += _timerMainCircle_Elapsed; ;
                 _timerMainCircle.Start();
@@ -147,7 +169,6 @@ namespace Demo_VisionMaster.Services
                 _timerCheckConnect.Elapsed += _timerCheckConnect_Elapsed;
                 _timerCheckConnect.Start();
                 _handleTriggerEvent += PlcService__handleTriggerEvent;
-                ViewHome.Instance.UpdateAppStatus($"Connect With PLC Success: {DateTime.Now}");
             }
         }
 
@@ -166,9 +187,22 @@ namespace Demo_VisionMaster.Services
                 {
                     return;
                 }
-                if (_client.ReadCoil("0", 1, 1).Value)
+                //if (_client.ReadCoil("0", 1, 1).Value)
+                //{
+                //    _handleTriggerEvent.Invoke();
+                //}
+                var output = _client.BatchRead(inputs).Value;
+                for (int i = 0; i < output.Count; i++) 
                 {
-                    _handleTriggerEvent.Invoke();
+                    if ((bool)output[i].Value == true) 
+                    {
+                       var Line = AppCoreBackend.Ins.handlHardTrigger(i);
+                       WriteRequestToPLC(i,Line);
+                    }
+                    else 
+                    {
+                        continue;
+                    }
                 }
             }
             catch (Exception ex)
@@ -197,12 +231,26 @@ namespace Demo_VisionMaster.Services
                 ViewHome.Instance.UpdateAppStatus($"Value not match with: {Value}  {DateTime.Now}");
             }
         }
+        public void WriteRequestToPLC(int index,double Value)
+        {
+            if (_client.Connected != true) return;
+            var t = _client.Write($"{index}", (double)Value);
+            var r = _client.ReadInt32("1", 1, 3);
+
+            if (Value == r.Value)
+            { 
+                ViewHome.Instance.UpdateAppStatus($"Send to PLC buffer {index}: {Value}  {DateTime.Now}");
+            }
+            else
+            {
+                ViewHome.Instance.UpdateAppStatus($"Value buffer {index} not match with: {Value} {DateTime.Now}");
+            }
+        }
         private void _timerCheckConnect_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             _timerCheckConnect.Stop();
             if (_client.Connected != true) 
             {
-                ViewHome.Instance.UpdatePlcStatus(false);
                 ViewHome.Instance.UpdateAppStatus($"PLC disconnected at: {DateTime.Now}");
 
                 _timerMainCircle.Stop();
@@ -211,7 +259,6 @@ namespace Demo_VisionMaster.Services
             }
             else 
             {
-                ViewHome.Instance.UpdatePlcStatus(true);
                 _timerCheckConnect.Start();
             }
         }
@@ -220,8 +267,6 @@ namespace Demo_VisionMaster.Services
             //_client.Close();
             _timerMainCircle.Stop();
             _timerCheckConnect.Stop();
-
-            ViewHome.Instance.UpdatePlcStatus(false);
             ViewHome.Instance.UpdateAppStatus($"Stop app complited: {DateTime.Now}");
         }
     }

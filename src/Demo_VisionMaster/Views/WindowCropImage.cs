@@ -146,7 +146,7 @@ namespace Demo_VisionMaster.Views
                     }
                     /* Save parameters in local file as XML. */
                     AppCoreBackend.Ins.roiInfo = roi;
-                    AppCoreBackend.Ins.roiRepo.Save(filePath, roi);
+                    AppCoreBackend.Ins.roiRepo.Save<ROI_Information>(filePath, roi);
                     Properties.Settings.Default.FileCofigRoiRectang = filePath;
                     Properties.Settings.Default.Save();
                     fileStr.Dispose();
@@ -176,7 +176,7 @@ namespace Demo_VisionMaster.Views
         private void btnImport_Click(object sender, EventArgs e)
         {
           
-            ROI_Information roi =AppCoreBackend.Ins.roiRepo.Load("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\roi_info.json");
+            ROI_Information roi =AppCoreBackend.Ins.roiRepo.Load<ROI_Information>("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\roi_info.json");
             selectionRect.X = roi.X;
             selectionRect.Y = roi.Y;
             selectionRect.Width = roi.Width;

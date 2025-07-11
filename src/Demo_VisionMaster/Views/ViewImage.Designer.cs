@@ -65,7 +65,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLoadLog = new System.Windows.Forms.Button();
+            this.dgvLogData = new System.Windows.Forms.DataGridView();
+            this.btnBrowseTestImage = new System.Windows.Forms.Button();
+            this.txtFilepathImage = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnBrowseFolderlog = new System.Windows.Forms.Button();
+            this.txtfolderLog = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,7 +88,8 @@
             this.groupBox2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogData)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -387,6 +396,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnBrowseFolderlog);
+            this.groupBox2.Controls.Add(this.txtfolderLog);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.btnBrowseTestImage);
+            this.groupBox2.Controls.Add(this.txtFilepathImage);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtsaveChange);
             this.groupBox2.Controls.Add(this.btnBrowseBoldAnalys);
             this.groupBox2.Controls.Add(this.btnBrowseSurface);
@@ -420,7 +435,7 @@
             // 
             // btnBrowseBoldAnalys
             // 
-            this.btnBrowseBoldAnalys.Location = new System.Drawing.Point(844, 204);
+            this.btnBrowseBoldAnalys.Location = new System.Drawing.Point(843, 173);
             this.btnBrowseBoldAnalys.Name = "btnBrowseBoldAnalys";
             this.btnBrowseBoldAnalys.Size = new System.Drawing.Size(39, 29);
             this.btnBrowseBoldAnalys.TabIndex = 8;
@@ -429,7 +444,7 @@
             // 
             // btnBrowseSurface
             // 
-            this.btnBrowseSurface.Location = new System.Drawing.Point(844, 131);
+            this.btnBrowseSurface.Location = new System.Drawing.Point(844, 116);
             this.btnBrowseSurface.Name = "btnBrowseSurface";
             this.btnBrowseSurface.Size = new System.Drawing.Size(39, 31);
             this.btnBrowseSurface.TabIndex = 7;
@@ -448,7 +463,7 @@
             // txtBold
             // 
             this.txtBold.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBold.Location = new System.Drawing.Point(22, 204);
+            this.txtBold.Location = new System.Drawing.Point(22, 173);
             this.txtBold.Name = "txtBold";
             this.txtBold.Size = new System.Drawing.Size(816, 29);
             this.txtBold.TabIndex = 5;
@@ -458,7 +473,7 @@
             // txtSurface
             // 
             this.txtSurface.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurface.Location = new System.Drawing.Point(22, 133);
+            this.txtSurface.Location = new System.Drawing.Point(22, 118);
             this.txtSurface.Name = "txtSurface";
             this.txtSurface.Size = new System.Drawing.Size(816, 29);
             this.txtSurface.TabIndex = 4;
@@ -479,7 +494,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 181);
+            this.label3.Location = new System.Drawing.Point(18, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 2;
@@ -489,7 +504,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 104);
+            this.label2.Location = new System.Drawing.Point(18, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 1;
@@ -516,10 +531,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(955, 591);
@@ -527,14 +542,105 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Log Historical";
             // 
-            // dataGridView1
+            // tableLayoutPanel6
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(949, 570);
-            this.dataGridView1.TabIndex = 0;
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.btnLoadLog, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.dgvLogData, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.2807F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.719298F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(949, 570);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // btnLoadLog
+            // 
+            this.btnLoadLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadLog.Location = new System.Drawing.Point(3, 529);
+            this.btnLoadLog.Name = "btnLoadLog";
+            this.btnLoadLog.Size = new System.Drawing.Size(155, 34);
+            this.btnLoadLog.TabIndex = 10;
+            this.btnLoadLog.Text = "Load data";
+            this.btnLoadLog.UseVisualStyleBackColor = true;
+            this.btnLoadLog.Click += new System.EventHandler(this.btnLoadLog_Click);
+            // 
+            // dgvLogData
+            // 
+            this.dgvLogData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(55)))), ((int)(((byte)(66)))));
+            this.dgvLogData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLogData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLogData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(139)))), ((int)(((byte)(230)))));
+            this.dgvLogData.Location = new System.Drawing.Point(3, 3);
+            this.dgvLogData.Name = "dgvLogData";
+            this.dgvLogData.ReadOnly = true;
+            this.dgvLogData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvLogData.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvLogData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLogData.Size = new System.Drawing.Size(943, 520);
+            this.dgvLogData.TabIndex = 0;
+            // 
+            // btnBrowseTestImage
+            // 
+            this.btnBrowseTestImage.Location = new System.Drawing.Point(843, 231);
+            this.btnBrowseTestImage.Name = "btnBrowseTestImage";
+            this.btnBrowseTestImage.Size = new System.Drawing.Size(39, 29);
+            this.btnBrowseTestImage.TabIndex = 12;
+            this.btnBrowseTestImage.UseVisualStyleBackColor = true;
+            this.btnBrowseTestImage.Click += new System.EventHandler(this.btnBrowseTestImage_Click);
+            // 
+            // txtFilepathImage
+            // 
+            this.txtFilepathImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilepathImage.Location = new System.Drawing.Point(22, 231);
+            this.txtFilepathImage.Name = "txtFilepathImage";
+            this.txtFilepathImage.Size = new System.Drawing.Size(816, 29);
+            this.txtFilepathImage.TabIndex = 11;
+            this.txtFilepathImage.Text = "C:\\Users\\Dell\\Desktop\\Vinh_TestVisionPro\\VisionParket\\VisionParket\\Image\\BlodConf" +
+    "ig.xml";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Test Image:";
+            // 
+            // btnBrowseFolderlog
+            // 
+            this.btnBrowseFolderlog.Location = new System.Drawing.Point(843, 290);
+            this.btnBrowseFolderlog.Name = "btnBrowseFolderlog";
+            this.btnBrowseFolderlog.Size = new System.Drawing.Size(39, 29);
+            this.btnBrowseFolderlog.TabIndex = 15;
+            this.btnBrowseFolderlog.UseVisualStyleBackColor = true;
+            this.btnBrowseFolderlog.Click += new System.EventHandler(this.btnBrowseFolderlog_Click);
+            // 
+            // txtfolderLog
+            // 
+            this.txtfolderLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfolderLog.Location = new System.Drawing.Point(22, 290);
+            this.txtfolderLog.Name = "txtfolderLog";
+            this.txtfolderLog.Size = new System.Drawing.Size(816, 29);
+            this.txtfolderLog.TabIndex = 14;
+            this.txtfolderLog.Text = "C:\\Users\\Dell\\Desktop\\Vinh_TestVisionPro\\VisionParket\\VisionParket\\Image\\BlodConf" +
+    "ig.xml";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 267);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Folder log:";
             // 
             // ViewImage
             // 
@@ -561,7 +667,8 @@
             this.groupBox2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,6 +712,14 @@
         private System.Windows.Forms.Button btnCropImage;
         private System.Windows.Forms.Button btnTestCrop;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLogData;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button btnLoadLog;
+        private System.Windows.Forms.Button btnBrowseFolderlog;
+        private System.Windows.Forms.TextBox txtfolderLog;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBrowseTestImage;
+        private System.Windows.Forms.TextBox txtFilepathImage;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -94,5 +94,29 @@ namespace Demo_VisionMaster.Properties {
                 this["FileCofigRoiRectang"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FileTesImage {
+            get {
+                return ((string)(this["FileTesImage"]));
+            }
+            set {
+                this["FileTesImage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FolderLog {
+            get {
+                return ((string)(this["FolderLog"]));
+            }
+            set {
+                this["FolderLog"] = value;
+            }
+        }
     }
 }

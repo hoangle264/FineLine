@@ -78,7 +78,6 @@ namespace Demo_VisionMaster
         public MainView()
         {
             InitializeComponent();
-
         }
 
         private void btnExits_Click(object sender, EventArgs e)
@@ -127,9 +126,10 @@ namespace Demo_VisionMaster
             pnClickImage.BackColor = Color.FromArgb(33, 40, 48);
 
         }
-        private void btnSetting_Click(object sender, EventArgs e)
+        private async void btnSetting_Click(object sender, EventArgs e)
         {
             currentPage = OpenChildForm(eAppMuduleSupport.Setting, ViewImage.Instance);
+            await ViewImage.Instance.AutoLoadding();
             pnClickImage.BackColor = Color.FromArgb(71, 139, 230);
             btnSetting.BackColor = Color.FromArgb(43, 50, 59);
             btnHome.BackColor = Color.FromArgb(33, 40, 48);

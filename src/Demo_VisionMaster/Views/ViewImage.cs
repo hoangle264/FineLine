@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Demo_VisionMaster.Controls;
+using Demo_VisionMaster.Helpers;
+using Demo_VisionMaster.Z_TestClass;
+using Microsoft.Win32;
+using OpenCvSharp;
+using OpenCvSharp.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +15,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Demo_VisionMaster.Controls;
-using Demo_VisionMaster.Helpers;
-using Demo_VisionMaster.Z_TestClass;
-using OpenCvSharp;
-using OpenCvSharp.Extensions;
 using VisionDesigner;
 
 namespace Demo_VisionMaster.Views
@@ -38,8 +39,10 @@ namespace Demo_VisionMaster.Views
             txtBold.Text = Properties.Settings.Default.FilePathBoldAnalys;
             txtEnhencement.Text = Properties.Settings.Default.FilePathEnhancement;
             txtSurface.Text = Properties.Settings.Default.FilePathSurface;
+            txtfolderLog.Text = Properties.Settings.Default.FolderLog;
+            txtFilepathImage.Text = Properties.Settings.Default.FileTesImage;
+            logDirectory = Properties.Settings.Default.FolderLog;
         }
-
         public void updatePbResultPic(Bitmap Image)
         {
             if (this.InvokeRequired)
@@ -50,8 +53,10 @@ namespace Demo_VisionMaster.Views
                 }));
                 return;
             }
-            pbResultPic.Image = Image;    
+            pbResultPic.Image = Image;
         }
+
+
 
         private void btnEnhancement_Click(object sender, EventArgs e)
         {
@@ -77,7 +82,7 @@ namespace Demo_VisionMaster.Views
             stopwatch.Start();
             TestEnhanFuction test = new TestEnhanFuction();
             test.Init();
-            test.Import("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\EnhancementConfig.xml");
+            test.Import(txtEnhencement.Text);
             test.Run("C:\\Users\\Dell\\Desktop\\New folder\\CAM2\\4.png");
             stopwatch.Stop();
             var t = stopwatch.ElapsedMilliseconds;
@@ -90,7 +95,7 @@ namespace Demo_VisionMaster.Views
             stopwatch.Start();
             TestSurfaceFucntion test = new TestSurfaceFucntion();
             test.Init();
-            test.Import("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\SurfaceConfig.xml");
+            test.Import(txtSurface.Text);
             test.Run("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\Temp.bmp");
             stopwatch.Stop();
             var t = stopwatch.ElapsedMilliseconds;
@@ -102,7 +107,7 @@ namespace Demo_VisionMaster.Views
             stopwatch.Start();
             TestBlodFunction test = new TestBlodFunction();
             test.Init();
-            test.Import("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\BlodConfig.xml");
+            test.Import(txtBold.Text);
             test.Run("C:\\Users\\Dell\\Desktop\\VisionParket\\VisionParket\\Image\\Temp.bmp");
             stopwatch.Stop();
             var t = stopwatch.ElapsedMilliseconds;
@@ -148,11 +153,11 @@ namespace Demo_VisionMaster.Views
             {
                 Console.WriteLine($"Đã xảy ra lỗi không mong muốn trong quá trình cắt: {ex.Message}");
             }
-            finally 
+            finally
             {
-               //todo
+                //todo
             }
-          
+
         }
         private void ResaveImage(string inputPath, string outputPath)
         {
@@ -190,7 +195,7 @@ namespace Demo_VisionMaster.Views
                 var pointMaxY = test.FindCurvePeak(new OpenCvSharp.Point((int)Math.Round(top.X), (int)Math.Round(top.Y)), new OpenCvSharp.Point((int)Math.Round(bottom.X), (int)Math.Round(bottom.Y)));
                 var OriginImage = test.LoadImage(@"C:\Users\Dell\Desktop\VisionParket\VisionParket\Image\Temp1.bmp");
 
-                Cv2.CvtColor(OriginImage, OriginImage, ColorConversionCodes.GRAY2BGR); 
+                Cv2.CvtColor(OriginImage, OriginImage, ColorConversionCodes.GRAY2BGR);
                 Cv2.Circle(OriginImage, test.InvertRotatePoint(left, angel, origin).ToPoint(), 8, new Scalar(0, 0, 255), -1);
                 Cv2.Circle(OriginImage, test.InvertRotatePoint(right, angel, origin).ToPoint(), 8, new Scalar(0, 255, 0), -1);
                 Cv2.Circle(OriginImage, test.InvertRotatePoint(pointMaxY, angel, origin).ToPoint(), 8, new Scalar(255, 0, 0), -1);
@@ -209,7 +214,7 @@ namespace Demo_VisionMaster.Views
                     Cv2.Line(OriginImage, start, end, new Scalar(255, 0, 255), 1);
                     Cv2.Line(OriginImage, pt1, pt2, new Scalar(0, 255, 0), 1);
                     Cv2.Line(OriginImage, new OpenCvSharp.Point(pointMaxX.X, pointMaxX.Y), new OpenCvSharp.Point(pointMinX.X, pointMinX.Y), new Scalar(255, 100, 0), 1);
-                    Cv2.Resize(OriginImage, OriginImage, new OpenCvSharp.Size(1200,700));
+                    Cv2.Resize(OriginImage, OriginImage, new OpenCvSharp.Size(1200, 700));
 
                     updatePbResultPic(OriginImage.ToBitmap());
 
@@ -229,9 +234,9 @@ namespace Demo_VisionMaster.Views
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + "\r\n" + "\r\n" + ex.StackTrace);  
+                Console.WriteLine(ex.Message + "\r\n" + "\r\n" + ex.StackTrace);
             }
-           
+
         }
 
         private void pbResultPic_Click(object sender, EventArgs e)
@@ -276,7 +281,7 @@ namespace Demo_VisionMaster.Views
                     if (File.Exists(filePath))
                     {
                         txtEnhencement.Text = filePath;
-                        
+
                     }
                 }
                 fileDlg.Dispose();
@@ -311,7 +316,7 @@ namespace Demo_VisionMaster.Views
                     if (File.Exists(filePath))
                     {
                         txtSurface.Text = filePath;
-                       
+
                     }
                 }
                 fileDlg.Dispose();
@@ -346,8 +351,8 @@ namespace Demo_VisionMaster.Views
                     if (File.Exists(filePath))
                     {
                         txtBold.Text = filePath;//C:\Users\Dell\Desktop\Vinh_TestVisionPro\VisionParket\VisionParket\Image\BlodConfig.xml
-                       
-      
+
+
                     }
                 }
                 fileDlg.Dispose();
@@ -371,7 +376,172 @@ namespace Demo_VisionMaster.Views
             Properties.Settings.Default.FilePathSurface = txtSurface.Text;
             Properties.Settings.Default.FilePathEnhancement = txtEnhencement.Text;
             Properties.Settings.Default.FilePathBoldAnalys = txtBold.Text;
+            Properties.Settings.Default.FileTesImage = txtFilepathImage.Text;
+            Properties.Settings.Default.FolderLog = txtfolderLog.Text;
             Properties.Settings.Default.Save();
+        }
+
+        private async void btnLoadLog_Click(object sender, EventArgs e)
+        {
+            //using (var openFileDialog = new System.Windows.Forms.OpenFileDialog
+            //{
+            //    Filter = "CSV files (*.csv)|*.csv",
+            //    Title = "Select a CSV file"
+            //})
+            //{
+
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        LoadingForm loadingForm = new LoadingForm();
+            //        loadingForm.Show(this);  // Không block thread
+            //        await Task.Run(() => LoadCsvToDataGridView(openFileDialog.FileName));
+            //        loadingForm.Close();
+            //    }
+            //}
+            await AutoLoadding();
+        }
+        private readonly string logDirectory = "C:\\Users\\TD-956\\Desktop\\V.hoang\\ProjectVisionV2\\src\\Demo_VisionMaster\\bin\\Debug\\Logs";
+        public async Task AutoLoadding()
+        {
+            try
+            {
+                if (!Directory.Exists(logDirectory))
+                    return;
+
+                var files = Directory.GetFiles(logDirectory, "log_*.csv");
+
+                foreach (var file in files)
+                {
+                    var fileInfo = new FileInfo(file);
+                    if (fileInfo.CreationTime.Date == DateTime.Now.Date)
+                    {
+                        await Task.Run(() => LoadCsvToDataGridView(fileInfo.FullName));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi Load log: " + ex.Message);
+            }
+        }
+        public void LoadDgvData(string[] data)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    LoadDgvData(data);
+                }));
+                return;
+            }
+            dgvLogData.Rows.Add(data);
+        }
+        public void ClearDgvData()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    ClearDgvData();
+                }));
+                return;
+            }
+            dgvLogData.Rows.Clear();
+            dgvLogData.Columns.Clear();
+        }
+        public void AddColDgvData(string header)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    AddColDgvData(header);
+                }));
+                return;
+            }
+            dgvLogData.Columns.Add(header, header);
+        }
+        private async Task LoadCsvToDataGridView(string filePath)
+        {
+            ClearDgvData();
+            try
+            {
+                using (var reader = new StreamReader(filePath))
+                {
+                    bool isHeader = true;
+
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+
+                        var values = line.Split(',');
+
+                        if (isHeader)
+                        {
+                            foreach (var header in values)
+                            {
+                                AddColDgvData(header);
+                            }
+                            isHeader = false;
+                        }
+                        else
+                        {
+                            while (values.Length < dgvLogData.ColumnCount)
+                            {
+                                values = values.Append(string.Empty).ToArray();
+                            }
+
+                            LoadDgvData(values);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading CSV: " + ex.Message);
+            }
+        }
+
+        private void btnBrowseTestImage_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog fileDlg = null;
+
+            try
+            {
+                fileDlg = new System.Windows.Forms.OpenFileDialog();
+                fileDlg.Filter = @"image(*.bmp;*.jpeg;*.jpg;*.png)|*.bmp;*.jpeg;*.jpg;*.png||";
+                fileDlg.FilterIndex = 2;
+                fileDlg.RestoreDirectory = true;
+                if (fileDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string filePath = fileDlg.FileName;
+                    if (File.Exists(filePath))
+                    {
+                        txtFilepathImage.Text = filePath;
+
+                    }
+                }
+                fileDlg.Dispose();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                if (null != fileDlg)
+                {
+                    fileDlg.Dispose();
+                }
+
+            }
+        }
+
+        private void btnBrowseFolderlog_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

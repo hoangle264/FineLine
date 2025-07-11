@@ -17,6 +17,7 @@ namespace Demo_VisionMaster.Services
         private Size _imgSize;
         private Mat _camMatrix;
         private Mat _dist;
+        public float Ratio { get; set; }
 
         public void CalibrateFromImage(List<string> CalibImage, Size PatternSize, float squareSize) 
         {
@@ -50,8 +51,8 @@ namespace Demo_VisionMaster.Services
             _camMatrix = new Mat();
             _dist = new Mat();
             Cv2.CalibrateCamera(_objPoint, _imgPoint, _imgSize, _camMatrix, _dist, out _, out _);
-            float ratio = ComputeMillimeterPerPixel(squareSize);
-            Console.WriteLine($"Tỉ lệ mm/pixel: {ratio:F4}");
+            Ratio = ComputeMillimeterPerPixel(squareSize);
+           // Console.WriteLine($"Tỉ lệ mm/pixel: {ratio:F4}");
 
         }
         public Mat GetCameraMatrix() => _camMatrix;

@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.mvdRenderActivex1 = new VisionDesigner.Controls.MVDRenderControl();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,10 +47,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtNumberImange = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbcalibresult = new System.Windows.Forms.Label();
+            this.txtCalibrateResult = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCalibrate = new System.Windows.Forms.Button();
-            this.btnStreaming = new System.Windows.Forms.Button();
-            this.btnStopStreaming = new System.Windows.Forms.Button();
             this.btnTrigger = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -60,14 +66,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtNumberImange = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtCalibrateResult = new System.Windows.Forms.Label();
-            this.mvdRenderActivex1 = new VisionDesigner.Controls.MVDRenderControl();
+            this.btnStopStreaming = new System.Windows.Forms.Button();
+            this.btnStreaming = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,12 +76,12 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -124,6 +124,24 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.31579F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(1320, 950);
             this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // mvdRenderActivex1
+            // 
+            this.mvdRenderActivex1.AdaptMode = VisionDesigner.Controls.MVD_RENDER_ADAPTIVE_MODE.MvdAdaptiveModeNormal;
+            this.mvdRenderActivex1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.tableLayoutPanel6.SetColumnSpan(this.mvdRenderActivex1, 3);
+            this.mvdRenderActivex1.ControlLanguage = VisionDesigner.Controls.MVD_RENDER_MENU_LANG_TYPE.MvdRenderMenuLangDefault;
+            this.mvdRenderActivex1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mvdRenderActivex1.EnableRetainShape = false;
+            this.mvdRenderActivex1.EraserColor = System.Drawing.Color.Red;
+            this.mvdRenderActivex1.EraserWidth = ((short)(10));
+            this.mvdRenderActivex1.ImageInfoTool = true;
+            this.mvdRenderActivex1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.mvdRenderActivex1.InteractType = VisionDesigner.Controls.MVD_RENDER_INTERACT_TYPE.MvdRenderInteractStandard;
+            this.mvdRenderActivex1.Location = new System.Drawing.Point(3, 3);
+            this.mvdRenderActivex1.Name = "mvdRenderActivex1";
+            this.mvdRenderActivex1.Size = new System.Drawing.Size(1314, 668);
+            this.mvdRenderActivex1.TabIndex = 17;
             // 
             // label5
             // 
@@ -258,7 +276,7 @@
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.79798F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.20202F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel5.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtSize, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
@@ -276,9 +294,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(229, 9);
+            this.label4.Location = new System.Drawing.Point(228, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.Size = new System.Drawing.Size(37, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "mm";
             // 
@@ -288,7 +306,7 @@
             this.txtSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSize.Location = new System.Drawing.Point(70, 6);
             this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(153, 26);
+            this.txtSize.Size = new System.Drawing.Size(152, 26);
             this.txtSize.TabIndex = 9;
             this.txtSize.Text = "26";
             this.txtSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -332,186 +350,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(484, 235);
             this.flowLayoutPanel2.TabIndex = 9;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Controls.Add(this.btnCalibrate, 0, 3);
-            this.tableLayoutPanel8.Controls.Add(this.btnStreaming, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.btnStopStreaming, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.btnTrigger, 0, 2);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 712);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 4;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(385, 235);
-            this.tableLayoutPanel8.TabIndex = 10;
-            // 
-            // btnCalibrate
-            // 
-            this.btnCalibrate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCalibrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalibrate.Location = new System.Drawing.Point(50, 179);
-            this.btnCalibrate.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
-            this.btnCalibrate.Name = "btnCalibrate";
-            this.btnCalibrate.Size = new System.Drawing.Size(285, 51);
-            this.btnCalibrate.TabIndex = 3;
-            this.btnCalibrate.Text = "Calibrate";
-            this.btnCalibrate.UseVisualStyleBackColor = true;
-            this.btnCalibrate.Click += new System.EventHandler(this.btnCalibrate_Click);
-            // 
-            // btnStreaming
-            // 
-            this.btnStreaming.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStreaming.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStreaming.Location = new System.Drawing.Point(50, 63);
-            this.btnStreaming.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
-            this.btnStreaming.Name = "btnStreaming";
-            this.btnStreaming.Size = new System.Drawing.Size(285, 48);
-            this.btnStreaming.TabIndex = 0;
-            this.btnStreaming.Text = "Start Streaming";
-            this.btnStreaming.UseVisualStyleBackColor = true;
-            this.btnStreaming.Click += new System.EventHandler(this.btnStreaming_Click);
-            // 
-            // btnStopStreaming
-            // 
-            this.btnStopStreaming.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStopStreaming.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopStreaming.Location = new System.Drawing.Point(50, 5);
-            this.btnStopStreaming.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
-            this.btnStopStreaming.Name = "btnStopStreaming";
-            this.btnStopStreaming.Size = new System.Drawing.Size(285, 48);
-            this.btnStopStreaming.TabIndex = 1;
-            this.btnStopStreaming.Text = "Stop Streaming";
-            this.btnStopStreaming.UseVisualStyleBackColor = true;
-            this.btnStopStreaming.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnTrigger
-            // 
-            this.btnTrigger.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTrigger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrigger.Location = new System.Drawing.Point(50, 121);
-            this.btnTrigger.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
-            this.btnTrigger.Name = "btnTrigger";
-            this.btnTrigger.Size = new System.Drawing.Size(285, 48);
-            this.btnTrigger.TabIndex = 2;
-            this.btnTrigger.Text = "Trigger";
-            this.btnTrigger.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.listView1, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.btnShowImage, 0, 2);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(1329, 44);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 3;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(326, 950);
-            this.tableLayoutPanel7.TabIndex = 4;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.txtFolderPath);
-            this.flowLayoutPanel1.Controls.Add(this.btnBrower);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(320, 34);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // txtFolderPath
-            // 
-            this.txtFolderPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFolderPath.Location = new System.Drawing.Point(3, 3);
-            this.txtFolderPath.Name = "txtFolderPath";
-            this.txtFolderPath.Size = new System.Drawing.Size(244, 29);
-            this.txtFolderPath.TabIndex = 16;
-            // 
-            // btnBrower
-            // 
-            this.btnBrower.Location = new System.Drawing.Point(252, 2);
-            this.btnBrower.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBrower.Name = "btnBrower";
-            this.btnBrower.Size = new System.Drawing.Size(59, 29);
-            this.btnBrower.TabIndex = 17;
-            this.btnBrower.Text = "Browse...";
-            this.btnBrower.UseVisualStyleBackColor = true;
-            this.btnBrower.Click += new System.EventHandler(this.btnBrower_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 43);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(320, 854);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnShowImage
-            // 
-            this.btnShowImage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnShowImage.Location = new System.Drawing.Point(248, 903);
-            this.btnShowImage.Name = "btnShowImage";
-            this.btnShowImage.Size = new System.Drawing.Size(75, 44);
-            this.btnShowImage.TabIndex = 2;
-            this.btnShowImage.Text = "Show Image";
-            this.btnShowImage.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.label7.Location = new System.Drawing.Point(3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1320, 41);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Streaming";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.label8.Location = new System.Drawing.Point(1329, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(326, 41);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "File";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 805F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1664, 1003);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel4
             // 
@@ -564,8 +402,8 @@
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.26316F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.73684F));
-            this.tableLayoutPanel10.Controls.Add(this.txtCalibrateResult, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lbcalibresult, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.txtCalibrateResult, 1, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(35, 70);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(35, 10, 3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -574,46 +412,210 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(395, 38);
             this.tableLayoutPanel10.TabIndex = 14;
             // 
-            // textBox2
+            // lbcalibresult
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(122, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(270, 26);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Text = "7";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lbcalibresult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbcalibresult.AutoSize = true;
+            this.lbcalibresult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcalibresult.ForeColor = System.Drawing.Color.White;
+            this.lbcalibresult.Location = new System.Drawing.Point(3, 9);
+            this.lbcalibresult.Name = "lbcalibresult";
+            this.lbcalibresult.Size = new System.Drawing.Size(113, 20);
+            this.lbcalibresult.TabIndex = 6;
+            this.lbcalibresult.Text = "Scale:";
             // 
             // txtCalibrateResult
             // 
             this.txtCalibrateResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCalibrateResult.AutoSize = true;
             this.txtCalibrateResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCalibrateResult.ForeColor = System.Drawing.Color.White;
-            this.txtCalibrateResult.Location = new System.Drawing.Point(3, 9);
+            this.txtCalibrateResult.Location = new System.Drawing.Point(122, 6);
             this.txtCalibrateResult.Name = "txtCalibrateResult";
-            this.txtCalibrateResult.Size = new System.Drawing.Size(113, 20);
-            this.txtCalibrateResult.TabIndex = 6;
-            this.txtCalibrateResult.Text = "Scale:";
+            this.txtCalibrateResult.Size = new System.Drawing.Size(270, 26);
+            this.txtCalibrateResult.TabIndex = 9;
+            this.txtCalibrateResult.Text = "7";
+            this.txtCalibrateResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // mvdRenderActivex1
+            // tableLayoutPanel8
             // 
-            this.mvdRenderActivex1.AdaptMode = VisionDesigner.Controls.MVD_RENDER_ADAPTIVE_MODE.MvdAdaptiveModeNormal;
-            this.mvdRenderActivex1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.tableLayoutPanel6.SetColumnSpan(this.mvdRenderActivex1, 3);
-            this.mvdRenderActivex1.ControlLanguage = VisionDesigner.Controls.MVD_RENDER_MENU_LANG_TYPE.MvdRenderMenuLangDefault;
-            this.mvdRenderActivex1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mvdRenderActivex1.EnableRetainShape = false;
-            this.mvdRenderActivex1.EraserColor = System.Drawing.Color.Red;
-            this.mvdRenderActivex1.EraserWidth = ((short)(10));
-            this.mvdRenderActivex1.ImageInfoTool = true;
-            this.mvdRenderActivex1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.mvdRenderActivex1.InteractType = VisionDesigner.Controls.MVD_RENDER_INTERACT_TYPE.MvdRenderInteractStandard;
-            this.mvdRenderActivex1.Location = new System.Drawing.Point(3, 3);
-            this.mvdRenderActivex1.Name = "mvdRenderActivex1";
-            this.mvdRenderActivex1.Size = new System.Drawing.Size(1314, 668);
-            this.mvdRenderActivex1.TabIndex = 17;
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Controls.Add(this.btnStreaming, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnStopStreaming, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.btnCalibrate, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.btnTrigger, 0, 2);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 712);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 4;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(385, 235);
+            this.tableLayoutPanel8.TabIndex = 10;
+            // 
+            // btnCalibrate
+            // 
+            this.btnCalibrate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCalibrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalibrate.Location = new System.Drawing.Point(50, 179);
+            this.btnCalibrate.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
+            this.btnCalibrate.Name = "btnCalibrate";
+            this.btnCalibrate.Size = new System.Drawing.Size(285, 51);
+            this.btnCalibrate.TabIndex = 3;
+            this.btnCalibrate.Text = "Calibrate";
+            this.btnCalibrate.UseVisualStyleBackColor = true;
+            this.btnCalibrate.Click += new System.EventHandler(this.btnCalibrate_Click);
+            // 
+            // btnTrigger
+            // 
+            this.btnTrigger.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTrigger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrigger.Location = new System.Drawing.Point(50, 121);
+            this.btnTrigger.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
+            this.btnTrigger.Name = "btnTrigger";
+            this.btnTrigger.Size = new System.Drawing.Size(285, 48);
+            this.btnTrigger.TabIndex = 2;
+            this.btnTrigger.Text = "Trigger";
+            this.btnTrigger.UseVisualStyleBackColor = true;
+            this.btnTrigger.Click += new System.EventHandler(this.btnTrigger_Click);
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.listView1, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.btnShowImage, 0, 2);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(1329, 44);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(326, 950);
+            this.tableLayoutPanel7.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.txtFolderPath);
+            this.flowLayoutPanel1.Controls.Add(this.btnBrower);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(320, 34);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // txtFolderPath
+            // 
+            this.txtFolderPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFolderPath.Location = new System.Drawing.Point(3, 3);
+            this.txtFolderPath.Name = "txtFolderPath";
+            this.txtFolderPath.Size = new System.Drawing.Size(244, 29);
+            this.txtFolderPath.TabIndex = 16;
+            // 
+            // btnBrower
+            // 
+            this.btnBrower.Location = new System.Drawing.Point(252, 2);
+            this.btnBrower.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBrower.Name = "btnBrower";
+            this.btnBrower.Size = new System.Drawing.Size(59, 29);
+            this.btnBrower.TabIndex = 17;
+            this.btnBrower.Text = "Browse...";
+            this.btnBrower.UseVisualStyleBackColor = true;
+            this.btnBrower.Click += new System.EventHandler(this.btnBrower_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 43);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(320, 854);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // btnShowImage
+            // 
+            this.btnShowImage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnShowImage.Location = new System.Drawing.Point(248, 903);
+            this.btnShowImage.Name = "btnShowImage";
+            this.btnShowImage.Size = new System.Drawing.Size(75, 44);
+            this.btnShowImage.TabIndex = 2;
+            this.btnShowImage.Text = "Show Image";
+            this.btnShowImage.UseVisualStyleBackColor = true;
+            this.btnShowImage.Click += new System.EventHandler(this.btnShowImage_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(1320, 41);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Streaming";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(40)))), ((int)(((byte)(48)))));
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.label8.Location = new System.Drawing.Point(1329, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(326, 41);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "File";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 805F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1664, 1003);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnStopStreaming
+            // 
+            this.btnStopStreaming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStopStreaming.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopStreaming.Location = new System.Drawing.Point(50, 63);
+            this.btnStopStreaming.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
+            this.btnStopStreaming.Name = "btnStopStreaming";
+            this.btnStopStreaming.Size = new System.Drawing.Size(285, 48);
+            this.btnStopStreaming.TabIndex = 5;
+            this.btnStopStreaming.Text = "Stop Streaming";
+            this.btnStopStreaming.UseVisualStyleBackColor = true;
+            // 
+            // btnStreaming
+            // 
+            this.btnStreaming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStreaming.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStreaming.Location = new System.Drawing.Point(50, 5);
+            this.btnStreaming.Margin = new System.Windows.Forms.Padding(50, 5, 50, 5);
+            this.btnStreaming.Name = "btnStreaming";
+            this.btnStreaming.Size = new System.Drawing.Size(285, 48);
+            this.btnStreaming.TabIndex = 16;
+            this.btnStreaming.Text = "Start Streaming";
+            this.btnStreaming.UseVisualStyleBackColor = true;
             // 
             // ViewCalibrate
             // 
@@ -638,15 +640,15 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -661,12 +663,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSize;
-        private System.Windows.Forms.Button btnStreaming;
         private System.Windows.Forms.TextBox txtFolderPath;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtWidth;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnStopStreaming;
         private System.Windows.Forms.Button btnTrigger;
         private System.Windows.Forms.Button btnCalibrate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -690,8 +690,10 @@
         private System.Windows.Forms.TextBox txtNumberImange;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label txtCalibrateResult;
+        private System.Windows.Forms.TextBox txtCalibrateResult;
+        private System.Windows.Forms.Label lbcalibresult;
         private VisionDesigner.Controls.MVDRenderControl mvdRenderActivex1;
+        private System.Windows.Forms.Button btnStopStreaming;
+        private System.Windows.Forms.Button btnStreaming;
     }
 }

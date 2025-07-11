@@ -24,7 +24,7 @@ namespace Demo_VisionMaster.Services
             string path = Properties.Settings.Default.FileCofigRoiRectang;
             if (path != "")
             {
-                ROI_Information roi = AppCoreBackend.Ins.roiRepo.Load(path);
+                ROI_Information roi = AppCoreBackend.Ins.roiRepo.Load<ROI_Information>(path);
                 _rect.X = roi.X;
                 _rect.Y = roi.Y;
                 _rect.Width = roi.Width;

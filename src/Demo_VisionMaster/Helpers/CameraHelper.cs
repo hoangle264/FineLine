@@ -38,7 +38,6 @@ namespace Demo_VisionMaster.Helpers
                 ViewHome.Instance.UpdateNotification("Enum failed with standard exception");
             }
         }
-
         public void SelectDevice(int deviceIndex) 
         {
             ViewHome.Instance.RefectListDevice();
@@ -170,7 +169,6 @@ namespace Demo_VisionMaster.Helpers
                 }
             }
         }
-
         public CMvdImage GetImage() 
         {
             try
@@ -375,6 +373,7 @@ namespace Demo_VisionMaster.Helpers
         {
             int num = 0;
             bool flag = true;
+            dic.Clear();
             CCameraTool.EnumDevices(Convert.ToUInt32((MVD_TRANSFER_LAYER_TYPE)5));
             foreach (CDeviceInfo deviceInfo in CCameraTool.DeviceInfoList)
             {
@@ -443,6 +442,45 @@ namespace Demo_VisionMaster.Helpers
                     }
                 }
             }
+        }
+
+        public CCameraTool SingleConnectCam(string CameraName, Dictionary<string, int> dic) 
+        {
+            if (CameraName == "" || dic == null)  return null;
+            CCameraTool CamTool = new CCameraTool();
+            var index = dic.Where(x => x.Key == CameraName).Select(x => x.Value).FirstOrDefault();
+            if (index == null || index == 0) return null;
+            CamTool.SelectDevice(index -1);
+            CamTool.OpenDevice(1u, 0);
+            _nDevConnectedIdx = index;
+            CDeviceInfo connectedDeviceInfo = CamTool.ConnectedDeviceInfo;
+            if (connectedDeviceInfo.TLayerType == MVD_TRANSFER_LAYER_TYPE.MVD_GIGE_DEVICE)
+            {
+                CGigeDeviceInfo cGigeDeviceInfo = connectedDeviceInfo as CGigeDeviceInfo;
+                _strDevConnectedSerialNumber = cGigeDeviceInfo.SerialNumber;
+            }
+            else if (connectedDeviceInfo.TLayerType == MVD_TRANSFER_LAYER_TYPE.MVD_USB_DEVICE)
+            {
+                CUSBDeviceInfo cUSBDeviceInfo = connectedDeviceInfo as CUSBDeviceInfo;
+                _strDevConnectedSerialNumber = cUSBDeviceInfo.SerialNumber;
+            }
+            ViewHome.Instance.UpdateNotification("Successfully " + CameraName + " device.");
+            return CamTool;
+        }
+
+        public CMvdImage SingleReadImage(CCameraTool CCameraTool) 
+        {
+            CCameraTool.StartGrab();
+            CMvdImage cFrameImage = new CMvdImage();
+            CCameraTool.CameraGrabResult.GetOneFrameTimeout(ref cFrameImage);
+            CCameraTool.StopGrab();
+            return cFrameImage;
+        }
+
+        public void SingleDisconnectCamera(CCameraTool camTool)
+        {
+            if (camTool == null) return;
+            camTool.CloseDevice();
         }
 
         public void MutipleConnectCam(List<string> DefaultDevice, Dictionary<string, int> dic) 

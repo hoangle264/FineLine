@@ -14,6 +14,7 @@ using Demo_VisionMaster.Model;
 using OpenCvSharp;
 using Demo_VisionMaster.Services;
 using static Demo_VisionMaster.Events.PlcEvent;
+using Demo_VisionMaster.Views;
 
 namespace Demo_VisionMaster.Controls
 {
@@ -57,11 +58,16 @@ namespace Demo_VisionMaster.Controls
         {
             cameraService.init();
         }
-        public double handlHardTrigger() 
+        public double handlHardTrigger()
         {
             cameraService.RunService();
             var Value = cameraService.Lenghts;
             return Value;
+        }
+        public double handlHardTrigger(int index) 
+        {
+            ViewHome.Instance.EnableTrigger(index);
+            return ViewHome.Instance.Line;
         }
         public void InitPlc() 
         {
@@ -72,6 +78,7 @@ namespace Demo_VisionMaster.Controls
             plc.Deinit();
         }
         
+
         
     }
 }

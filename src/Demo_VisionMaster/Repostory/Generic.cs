@@ -12,15 +12,16 @@ namespace Demo_VisionMaster.Repostory
     public class Generic
     {
         public Generic() { }
-        public ROI_Information Load(string filePath)
+
+        public T Load<T>(string filePath) where T : new()
         {
             if (!File.Exists(filePath))
-                return new ROI_Information();
+                return new T();
             string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<ROI_Information>(json);
+            return JsonConvert.DeserializeObject<T>(json);
         }
 
-        public void Save(string filePath, ROI_Information data)
+        public void Save<T>(string filePath, T data)
         {
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
             File.WriteAllText(filePath, json);

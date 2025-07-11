@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo_VisionMaster.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace Demo_VisionMaster.UserControls
 {
@@ -66,7 +68,7 @@ namespace Demo_VisionMaster.UserControls
             {
                 g.Clear(Color.Transparent);
                 if (connect)
-                    g.FillEllipse(new SolidBrush(Color.Green),0 , 0, r, r);
+                    g.FillEllipse(new SolidBrush(Color.LimeGreen),0 , 0, r, r);
                 else
                     g.FillEllipse(new SolidBrush(Color.Red), 0, 0, r, r);
 
@@ -97,10 +99,28 @@ namespace Demo_VisionMaster.UserControls
             }
 
         }
-
+        CameraService service = new CameraService();
         private void pbIsconnect_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public bool EnableInit(string KeyName) 
+        {
+            string CameraName = System.Environment.GetEnvironmentVariable(KeyName);
+            var Status = service.InitUC(CameraName);
+            return Status;
+        }
+        public bool Stop(string KeyName) 
+        {
+            string CameraName = System.Environment.GetEnvironmentVariable(KeyName);
+            var Status = service.StopServiceUC(CameraName);
+            return Status;
+        }
+        public double Start() 
+        {
+            service.RunServiceUC();
+            UpdateCameraControl(service.Bitmaps,service.Line,service.Status);
+            return service.Line;
         }
     }
 }

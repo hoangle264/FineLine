@@ -20,5 +20,11 @@
     <Setting Name="FileCofigRoiRectang" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\Dell\Desktop\VisionParket\VisionParket\Image\\roi_info.json</Value>
     </Setting>
+    <Setting Name="FileTesImage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FolderLog" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

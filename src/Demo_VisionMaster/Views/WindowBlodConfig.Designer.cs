@@ -318,7 +318,7 @@
             this.ParamValueBoxCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ParamValueBoxCol.Width = 195;
             // 
-            // BlodConfigView
+            // WindowBlodConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,7 +332,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.mvdRenderActivex2);
             this.Controls.Add(this.mvdRenderActivex1);
-            this.Name = "BlodConfigView";
+            this.Name = "WindowBlodConfig";
             this.Text = "BlodConfigView";
             this.Load += new System.EventHandler(this.BlodConfigView_Load);
             this.groupBox1.ResumeLayout(false);
